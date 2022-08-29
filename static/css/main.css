@@ -2,24 +2,25 @@ html, body {
     display: flex;
     justify-content: center;
     height: 100%;
+    background-color: #f2f2f2;
     }
-    body, div, h1, form, input { 
-    padding: 0;
-    margin: 0;
-    outline: none;
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 16px;
-    color: #666;
-    }
+
     h1 {
     padding: 10px 0;
     font-size: 32px;
     font-weight: 300;
     text-align: center;
     }
-    p {
-    font-size: 12px;
+    .title {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 28px;
+    padding: 10px;
     }
+
+.subtitle{
+    font-size: 18px;
+    padding: 10px;
+}
  
     .main-block {
     max-width: 380px; 
@@ -29,7 +30,7 @@ html, body {
     border-radius: 5px; 
     border: solid 1px #ccc;
     box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-    background: #ebebeb; 
+    background: #f7f7f7; 
     }
     form {
     margin: 0 80px;
@@ -72,23 +73,34 @@ html, body {
     color: #fff;
     }
     button:hover {
-    background: #26a9e0;
+       background-color: deepskyblue;
     }
-  
+
+    .btn-delete {
+        border: 1px solid lighten(gray, 24%);
+        border-radius: 24px;
+        width: 40%;
+        background-color: #D8000C;
+        font-size: 14px;
+        color: #fff;
+        margin-right: 0;
+        margin-left:auto;
+        display:block;
+    }
+
 img {
     position: relative;
     top: 5px;
     left: 5px;
 }
 
-p{
-    position: relative;
-    text-align: center;
-    padding: 10;
-    margin: 0;
-    outline: none;
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 26px;
-    color: #666;
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('https://i.imgur.com/GnyDvKN.png')
 }
-
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('https://i.imgur.com/Q9BGTuy.png');
+}

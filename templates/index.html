@@ -19,19 +19,33 @@
           <div class="btn-block">
             <button type="submit" href="/">Add city</button>
           </div>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+          <div class="{{category}}">{{message}}</div>
+          {% endfor %}
+          {% endif %}
+          {% endwith %} 
+
         </form>
         {% for data in weather %}
         <div class="box">
-        <p>
-            <img src="http://openweathermap.org/img/w/{{data.icon}}.png" alt="icon">    
-            {{data.name}}
-        </p>
+        
+        <img src="http://openweathermap.org/img/w/{{data.icon}}.png" alt="icon">    
+        <span class="title">{{data.name}}</span>
+    
         <br>
-        <p>{{data.temperature}} C</p>
+        <span class="subtitle">{{data.temperature}} C</span>
         <br>
-        <p>{{data.description}}</p>
+        <span class="subtitle">{{data.description}}</span>
+        <a href="{{ url_for('delete', city=data.name) }}">
+          <button class="btn-delete">Delete</button>
+      </a>
       </div>
         {% endfor %}
+
+       
       </div>
 
 </body>
